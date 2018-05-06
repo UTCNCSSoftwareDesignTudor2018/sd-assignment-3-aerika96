@@ -1,5 +1,7 @@
 package readersWritersApp.persistence.entities;
 
+import com.fasterxml.jackson.annotation.*;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -15,6 +17,42 @@ public class Article {
     private Writer writer;
     private List<Article> related;
     private List<Article> relatedTo;
+
+    public Article(){}
+
+    public Article(String title, String articleAbstract, String body){
+        this.title = title;
+        this.articleAbstract =  articleAbstract;
+        this.body = body;
+
+    }
+
+    public Article(String title, String articleAbstract, String body, List<Article> related){
+        this.title = title;
+        this.articleAbstract =  articleAbstract;
+        this.body = body;
+        this.related = related;
+        this.relatedTo = related;
+
+    }
+
+    public Article(String title, String articleAbstract, String body, Writer writer){
+        this.title = title;
+        this.articleAbstract =  articleAbstract;
+        this.body = body;
+        this.writer=writer;
+
+    }
+
+    public Article(String title, String articleAbstract, String body, Writer writer, List<Article> related){
+        this.title = title;
+        this.articleAbstract =  articleAbstract;
+        this.body = body;
+        this.writer = writer;
+        this.related = related;
+        this.relatedTo = related;
+
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -56,6 +94,7 @@ public class Article {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "writer")
     @NotNull
+    @JsonBackReference
     public Writer getWriter() {
         return writer;
     }
@@ -64,11 +103,12 @@ public class Article {
         this.writer = writer;
     }
 
-    @ManyToMany
-    @JoinTable(name="tbl_related_articles",
+
+   /* @JoinTable(name="tbl_related_articles",
             joinColumns=@JoinColumn(name="articleId"),
             inverseJoinColumns=@JoinColumn(name="relatedId")
-    )
+    )*/
+   @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     public List<Article> getRelated() {
         return related;
     }
@@ -77,11 +117,14 @@ public class Article {
         this.related = related;
     }
 
-    @ManyToMany
-    @JoinTable(name="tbl_related_articles",
+
+   /* @JoinTable(name="tbl_related_articles",
             joinColumns=@JoinColumn(name="relatedId"),
             inverseJoinColumns=@JoinColumn(name="articleId")
     )
+    @JsonIgnore*/
+   @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "related")
+   @JsonIgnore
     public List<Article> getRelatedTo() {
         return relatedTo;
     }

@@ -1,48 +1,118 @@
 package readersWritersApp.clientsServer.protocol;
-
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.type.TypeFactory;
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import readersWritersApp.MultiServer;
+import readersWritersApp.business.ArticleService;
 import readersWritersApp.business.WriterService;
+import readersWritersApp.clientsServer.server.MultiServerThread;
+import readersWritersApp.persistence.entities.Article;
+import readersWritersApp.persistence.entities.Writer;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import javax.inject.Qualifier;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class CommunicationProtocol {
 
-    @Inject
-    private WriterService writerService;
+   private final WriterService writerService;
+   private final ArticleService articleService;
+   private ObjectMapper mapper;
+   private MultiServerThread server;
 
-
-    @Required
-    public void setWriterService(WriterService writerService){
-        this.writerService = writerService;
-    }
     private static final int WAITING = 0;
     private static final int LOG_IN =1;
+    private static final int CHANGE_PERSONAL_DATA=2;
+    private static final int ALL_ARTICLES = 3;
+    private static final int ARTICLE_BY_TITLE = 4;
+    private static final int ADD_ARTICLE = 5;
 
-    private static final int NUMJOKES = 5;
 
     private int state = WAITING;
+
+    public CommunicationProtocol(MultiServerThread server){
+        writerService = new WriterService();
+        articleService = new ArticleService();
+        mapper = new ObjectMapper();
+        this.server = server;
+    }
+
 
 
     public void setState(String state){
         if(state.equalsIgnoreCase("LOG IN")){
             this.state = LOG_IN;
         }
+        else if(state.equalsIgnoreCase("CHANGE PERSONAL DATA")){
+            this.state = CHANGE_PERSONAL_DATA;
+        }
+        else if(state.equalsIgnoreCase("ALL ARTICLES")){
+            this.state = ALL_ARTICLES;
+        }
+        else if(state.equalsIgnoreCase("ARTICLE BY TITLE")){
+            this.state = ARTICLE_BY_TITLE;
+        }
+        else if(state.equalsIgnoreCase("ADD NEW ARTICLE")){
+            this.state = ADD_ARTICLE;
+        }
     }
 
-    public String processInput(String theInput) {
-        String theOutput = null;
-
+    public String processInput(String theInput)  {
+       String theOutput = null;
+        try {
         if(state == LOG_IN){
-            try {
-                theOutput = writerService.getByUserName(theInput).getPassword();
-            }catch (NullPointerException e){
-                theOutput = new String("not found");
+
+                String jsonInString = mapper.writeValueAsString(writerService.getByUserName(theInput));
+                theOutput = jsonInString;
+
+        }
+        else if(state == CHANGE_PERSONAL_DATA){
+
+            Writer writer =  mapper.readValue(theInput,Writer.class);
+            String jsonInString = mapper.writeValueAsString(writerService.updateWriter(writer));
+            theOutput = jsonInString;
+
+        }
+        else if(state == ALL_ARTICLES){
+            List<Article> articles =  new ArrayList<Article>( articleService.getAll());
+           // mapper.enable(SerializationFeature.INDENT_OUTPUT);
+            String jsonString = mapper.writeValueAsString(articles);
+            theOutput = jsonString;
+
+        }
+        else if(state == ARTICLE_BY_TITLE){
+            /*Article article = articleService.getByTitle(theInput);
+            String jsonString = mapper.writeValueAsString(article);
+            server.writeToClient(jsonString);
+            jsonString = mapper.writeValueAsString(article.getRelated());
+            server.writeToClient(jsonString);
+            jsonString = mapper.writeValueAsString(article.getWriter());
+            theOutput = jsonString;*/
+        }
+        else if(state == ADD_ARTICLE){
+            Article article  = mapper.readValue(theInput, Article.class);
+            Writer writer = mapper.readValue(server.readFromClient(),Writer.class);
+            List<String> titles = mapper.readValue(server.readFromClient(), TypeFactory.defaultInstance().constructCollectionType(List.class, String.class));
+            List<Article> related = new ArrayList<Article>();
+
+          /*  for (String t: titles
+                 ) {
+                related.add(articleService.getByTitle(t));
             }
+            // Article newArticle = new Article(article.getTitle(),article.getArticleAbstract(),article.getBody(),writer,related);
+*/
+            articleService.addNewArticle(article, writer, related);
+            theOutput = new String("Done");
+        }
+        }catch (NullPointerException e){
+            theOutput = null;
+        } catch (JsonGenerationException e) {
+            e.printStackTrace();
+        }  catch (IOException e) {
+            e.printStackTrace();
         }
 
 

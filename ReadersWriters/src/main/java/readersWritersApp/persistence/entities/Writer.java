@@ -1,10 +1,14 @@
 package readersWritersApp.persistence.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "writers")
+@JsonIgnoreProperties("inspection")
 public class Writer {
    private Integer ID;
     private String username;
@@ -13,6 +17,15 @@ public class Writer {
     private String lastName;
     private String institution;
     private List<Article> articles;
+
+    public Writer(){}
+
+    public Writer(String username, String password, String firstName, String lastName){
+        this.username = username;
+        this.password = password;
+        this.firstName =  firstName;
+        this.lastName = lastName;
+    }
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -70,6 +83,7 @@ public class Writer {
     }
 
     @OneToMany (mappedBy = "writer", fetch = FetchType.EAGER)
+    @JsonManagedReference
     public List<Article> getArticles() {
         return articles;
     }

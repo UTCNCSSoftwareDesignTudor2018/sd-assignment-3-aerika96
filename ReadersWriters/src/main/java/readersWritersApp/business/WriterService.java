@@ -3,17 +3,37 @@ package readersWritersApp.business;
 import org.springframework.stereotype.Service;
 import readersWritersApp.persistence.entities.Writer;
 import readersWritersApp.persistence.repositories.WriterRepository;
+import readersWritersApp.persistence.repositories.WriterRepositoryInterface;
 
-import javax.inject.Inject;
 
 @Service()
 public class WriterService {
 
-    @Inject
-    WriterRepository writerRepository;
+   private WriterRepositoryInterface writerRepository;
+
+   public WriterService(){
+       writerRepository = new WriterRepository();
+   }
+
+   public Writer getById(Integer id){
+
+       return writerRepository.findById(id);
+   }
 
     public Writer getByUserName (String username){
 
-         return writerRepository.findAll().get(0);
+         return writerRepository.findByUsername(username);
+    }
+
+    public Writer updateWriter (Writer wr){
+       Writer writer = this.getById(wr.getID());
+       writer.setFirstName(wr.getFirstName());
+       writer.setLastName(wr.getLastName());
+       writer.setInstitution(wr.getInstitution());
+       writer.setUsername(wr.getUsername());
+
+       writerRepository.updateWriter(writer);
+       return writerRepository.findById(writer.getID());
+
     }
 }
