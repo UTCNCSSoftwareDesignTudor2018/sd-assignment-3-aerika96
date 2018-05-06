@@ -34,8 +34,12 @@ public class MultiServerThread extends Thread{
             String inputLine, outputLine;
             CommunicationProtocol cp = new CommunicationProtocol(this);
             while ((inputLine = in.readLine()) != null) {
-                cp.setState(inputLine);
-                inputLine = in.readLine();
+                String state;
+                do {
+                    state = cp.setState(inputLine);
+                    inputLine = in.readLine();
+                }while (state.equalsIgnoreCase("problem"));
+                //inputLine = in.readLine();
                 outputLine = cp.processInput(inputLine);
 
                 out.println(outputLine);

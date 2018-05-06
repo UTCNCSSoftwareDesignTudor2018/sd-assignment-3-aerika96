@@ -36,12 +36,26 @@
       <file leaf-file-name="CommunicationProtocol.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/readersWritersApp/clientsServer/protocol/CommunicationProtocol.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="105" column="2" selection-start-line="105" selection-start-column="2" selection-end-line="105" selection-end-column="2" />
+            <state relative-caret-position="238">
+              <caret line="142" column="62" selection-start-line="142" selection-start-column="62" selection-end-line="142" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2688#2697#0" expanded="true" />
                 <element signature="e#3779#3788#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MultiServerThread.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/readersWritersApp/clientsServer/server/MultiServerThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1429#1430#0" expanded="true" />
+                <element signature="e#1469#1470#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,18 +101,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WriterRepositoryInterface.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/readersWritersApp/persistence/repositories/WriterRepositoryInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="WriterRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/readersWritersApp/persistence/repositories/WriterRepository.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -120,11 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArticleService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ArticleService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/readersWritersApp/business/ArticleService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="136">
+              <caret line="49" column="26" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
               <folding>
                 <element signature="e#462#463#0" expanded="true" />
                 <element signature="e#525#526#0" expanded="true" />
@@ -132,16 +134,18 @@
                 <element signature="e#605#606#0" expanded="true" />
                 <element signature="e#646#647#0" expanded="true" />
                 <element signature="e#685#686#0" expanded="true" />
+                <element signature="e#1317#1318#0" expanded="true" />
+                <element signature="e#1349#1350#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArticleRepository.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ArticleRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/readersWritersApp/persistence/repositories/ArticleRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-29">
-              <caret line="33" column="121" selection-start-line="33" selection-start-column="121" selection-end-line="33" selection-end-column="121" />
+            <state relative-caret-position="170">
+              <caret line="70" column="35" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -183,17 +187,17 @@
         <option value="$PROJECT_DIR$/src/main/java/readersWritersApp/MultiServer.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/readersWritersApp/persistence/repositories/WriterRepositoryInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/readersWritersApp/clientsServer/server/MultiServerThread.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/readersWritersApp/persistence/entities/Writer.java" />
         <option value="$PROJECT_DIR$/src/main/java/readersWritersApp/persistence/repositories/ArticleRepositoryInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/readersWritersApp/business/ArticleService.java" />
         <option value="$PROJECT_DIR$/src/main/java/readersWritersApp/business/WriterService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/java/readersWritersApp/persistence/entities/Article.java" />
-        <option value="$PROJECT_DIR$/src/main/java/readersWritersApp/clientsServer/protocol/CommunicationProtocol.java" />
         <option value="$PROJECT_DIR$/src/main/java/readersWritersApp/persistence/repositories/WriterRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/readersWritersApp/clientsServer/server/MultiServerThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/readersWritersApp/persistence/repositories/ArticleRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/readersWritersApp/clientsServer/protocol/CommunicationProtocol.java" />
+        <option value="$PROJECT_DIR$/src/main/java/readersWritersApp/business/ArticleService.java" />
       </list>
     </option>
   </component>
@@ -477,12 +481,12 @@
       <workItem from="1525290734807" duration="8659000" />
       <workItem from="1525360207106" duration="1636000" />
       <workItem from="1525366293356" duration="21783000" />
-      <workItem from="1525451512548" duration="53622000" />
+      <workItem from="1525451512548" duration="65833000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122317000" />
+    <option name="totallyTimeSpent" value="134528000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -529,7 +533,7 @@
       <window_info anchor="right" id="Palette" order="7" />
       <window_info anchor="bottom" id="Spring" order="0" />
       <window_info id="Image Layers" order="2" />
-      <window_info anchor="bottom" id="Run" order="9" visible="true" weight="0.3290938" />
+      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.3290938" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="9" weight="0.25" />
       <window_info id="UI Designer" order="3" />
@@ -547,7 +551,7 @@
       <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
       <window_info anchor="right" id="Maven Projects" order="1" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.16398244" />
+      <window_info content_ui="combo" id="Project" order="6" weight="0.16398244" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info id="Web" order="5" side_tool="true" />
@@ -571,18 +575,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/readersWritersApp/clientsServer/protocol/CommunicationProtocol.java</url>
-          <line>106</line>
+          <line>142</line>
           <properties />
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/readersWritersApp/clientsServer/protocol/CommunicationProtocol.java</url>
-          <line>97</line>
-          <properties />
-          <option name="timeStamp" value="28" />
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="30" />
+      <option name="time" value="34" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -847,18 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/readersWritersApp/clientsServer/server/MultiServerThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1374#1375#0" expanded="true" />
-            <element signature="e#1393#1394#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/readersWritersApp/persistence/repositories/ArticleRepositoryInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -890,21 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/readersWritersApp/business/ArticleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#525#526#0" expanded="true" />
-            <element signature="e#566#567#0" expanded="true" />
-            <element signature="e#605#606#0" expanded="true" />
-            <element signature="e#646#647#0" expanded="true" />
-            <element signature="e#685#686#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/readersWritersApp/persistence/entities/Writer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-136">
@@ -932,18 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/readersWritersApp/clientsServer/protocol/CommunicationProtocol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="105" column="2" selection-start-line="105" selection-start-column="2" selection-end-line="105" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2688#2697#0" expanded="true" />
-            <element signature="e#3779#3788#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/readersWritersApp/business/WriterService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -964,12 +923,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/readersWritersApp/persistence/repositories/ArticleRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/readersWritersApp/clientsServer/server/MultiServerThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
-          <caret line="33" column="121" selection-start-line="33" selection-start-column="121" selection-end-line="33" selection-end-column="121" />
+        <state relative-caret-position="697">
+          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1429#1430#0" expanded="true" />
+            <element signature="e#1469#1470#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/readersWritersApp/persistence/repositories/ArticleRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="70" column="35" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/readersWritersApp/clientsServer/protocol/CommunicationProtocol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="142" column="62" selection-start-line="142" selection-start-column="62" selection-end-line="142" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2688#2697#0" expanded="true" />
+            <element signature="e#3779#3788#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/readersWritersApp/business/ArticleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="49" column="26" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+          <folding>
+            <element signature="e#462#463#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#566#567#0" expanded="true" />
+            <element signature="e#605#606#0" expanded="true" />
+            <element signature="e#646#647#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#1317#1318#0" expanded="true" />
+            <element signature="e#1349#1350#0" expanded="true" />
           </folding>
         </state>
       </provider>

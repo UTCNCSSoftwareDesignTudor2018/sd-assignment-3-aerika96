@@ -40,4 +40,18 @@ public class ArticleService {
         */
         return article;
     }
+
+    public void updateArticle(Article article){
+        articleRepository.updateArticle(article);
+    }
+
+    public void deleteArticle (Article art){
+
+        art.setBody(null);
+        art.setRelated(null);
+        art.setRelatedTo(null);
+        art.setTitle(null);
+        art.setArticleAbstract(null);
+        articleRepository.updateArticle(art);
+    }
 }

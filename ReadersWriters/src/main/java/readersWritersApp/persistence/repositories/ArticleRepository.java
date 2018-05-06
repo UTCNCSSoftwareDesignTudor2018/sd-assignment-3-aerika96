@@ -66,5 +66,13 @@ public class ArticleRepository implements ArticleRepositoryInterface {
         return article;
     }
 
+    public void deleteArticle(Article article){
+        this.session =(Session) ConnectionFactory.getConnection("hibernateconnection");
+        session.beginTransaction();
+        session.delete(article);
+        session.getTransaction().commit();
+        session.close();
+
+    }
 
 }

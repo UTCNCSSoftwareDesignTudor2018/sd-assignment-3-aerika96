@@ -17,6 +17,9 @@ public class WriterView {
     JButton changeLastName;
     JButton changeInstitution;
     JButton publishArticle;
+    JButton read;
+    JButton delete;
+    JButton edit;
 
 
     JLabel usernameData;
@@ -42,6 +45,9 @@ public class WriterView {
         changeLastName =  new JButton("CHANGE");
         changeInstitution =new JButton("CHANGE");
         publishArticle = new JButton("PUBLISH");
+        read = new JButton("READ");
+        edit = new JButton("EDIT");
+        delete = new JButton("DELETE");
 
         usernameData = new JLabel();
         firstNameData = new JLabel();
@@ -119,10 +125,19 @@ public class WriterView {
         * */
 
         JPanel myArticles = new JPanel();
+        JPanel buttons = new JPanel();
         allMyArticles = new JList();
-        allMyArticles.setVisibleRowCount(30);
+        allMyArticles.setVisibleRowCount(400);
+        allMyArticles.setFixedCellWidth(600);
         allMyArticles.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        myArticles.add()
+        buttons.add(read);
+        buttons.add(edit);
+        buttons.add(delete);
+        buttons.setLayout(new GridLayout(0,3));
+        allMyArticles.setLayout( new BorderLayout());
+        myArticles.add(allMyArticles, BorderLayout.CENTER);
+        myArticles.add(buttons,BorderLayout.SOUTH);
+
 
 
 
@@ -134,6 +149,10 @@ public class WriterView {
 
         tabbedPane.addTab("Publish", newArticle);
         tabbedPane.setMnemonicAt(1, KeyEvent.VK_1);
+
+        tabbedPane.addTab("My Articles", myArticles);
+        tabbedPane.setMnemonicAt(2, KeyEvent.VK_1);
+
 
         mainFrame.setLayout(new BorderLayout());
         mainFrame.add(tabbedPane,BorderLayout.CENTER);
@@ -215,6 +234,26 @@ public class WriterView {
         }
         return res;
     }
+
+    public void setAllMyArticles(List<Article> articles){
+        String titles[] = new String[articles.size()];
+        int i=0;
+        for (Article article: articles
+                ) {
+            titles[i] = article.getTitle();
+            i++;
+        }
+        allMyArticles.setListData(titles);
+
+
+    }
+
+
+    public String getallMyArticles(){
+        Object obj = allMyArticles.getSelectedValue();
+        String  res = (String) obj;
+        return res;
+    }
     public void addUserNameListener (ActionListener st){
         changeUsername.addActionListener(st);
     }
@@ -230,6 +269,16 @@ public class WriterView {
 
     public void addPublishListener (ActionListener st){
         publishArticle.addActionListener(st);
+    }
+
+    public void addReadListener (ActionListener st){
+        read.addActionListener(st);
+    }
+    public void addEditListener (ActionListener st){
+        edit.addActionListener(st);
+    }
+    public void addDeleteListener (ActionListener st){
+        delete.addActionListener(st);
     }
 
 }

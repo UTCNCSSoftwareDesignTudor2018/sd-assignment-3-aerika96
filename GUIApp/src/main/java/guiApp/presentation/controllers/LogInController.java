@@ -46,10 +46,10 @@ public class LogInController {
                 }
             }catch(IOException e){
 
-            }catch(NullPointerException e){
+            }/*catch(NullPointerException e){
                 logInView.showErrorMessage("Incorrect username or password");
                 System.out.println("Received null");
-            }
+            }*/
 
         }
 
